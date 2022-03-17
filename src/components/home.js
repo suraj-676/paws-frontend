@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
-import Home from './components/pages/Home';
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import Services from './components/pages/Services';
 import SignIn from './components/pages/SignIn';
@@ -58,8 +57,8 @@ class Home extends React.Component {
                     (
                       <ul>
                         <li>Welcome {this.state.currentUser.name} | </li>
-                        <li><Link to='/my_profile'>My Profile</Link></li>
-                        <li><Link to='/products'>All Products</Link></li>
+                        <li><Link to='/animals'>Animal</Link></li>
+                        <li><Link to='/donation'>Donation</Link></li>
                         <li><Link to='/cart'>Cart</Link></li>
                         <li><Link onClick={this.handleLogout} to='/'>Logout</Link></li>
                       </ul>

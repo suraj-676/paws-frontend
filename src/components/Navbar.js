@@ -59,22 +59,22 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/products'
+              to='/contact-us'
               className='nav-links'
               onClick={closeMobileMenu}
             >
                Contact Us
             </Link>
           </li>
-          <li className='nav-item'>
+          {/* <li className='nav-item'>
             <Link
-              to='/contact-us'
+              to='/Sign-In'
               className='nav-links'
               onClick={closeMobileMenu}
             >
              Sign In
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to='/sign-up'

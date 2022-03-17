@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import styles from './Login.css'
 
 const BASE_URL = 'http://localhost:3000'
 

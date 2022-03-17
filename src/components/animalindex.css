@@ -1,0 +1,26 @@
+.animalsIndex {
+  margin-top: 10%;
+  /* display: inline-block; */
+}
+
+li {
+  list-style: none;
+  margin: 10px;
+}
+
+.animalIndexLi {
+  display: inline-block;
+
+  background-color: rgb(238, 222, 196, 0.5);
+  padding: 5%;
+  border-radius: 10px;
+}
+
+.img_tag {
+  width: 300px;
+  text-align: center;
+}
+
+body {
+  background-color: blueviolet;
+}
