@@ -54,7 +54,7 @@ class Animals extends React.Component {
   render(){
     const { loading, error, animals } = this.state
     // console.log('image', animals.map(p => cld.image(a.image)));
-    // console.log("CHECK Render PRODUCT", this.state)
+    // console.log("CHECK Render Animal", this.state)
     if (error) {
       return <p>Error loading</p>
     }
@@ -67,10 +67,7 @@ class Animals extends React.Component {
               <Link to={`/animals/${a.id}`}>
               <strong> {a.name} </strong>
              <br></br>
-             {/* <strong>{a.description}</strong>
-             <strong>{a.age}</strong> */}
-             {/* <strong>{a.species}</strong>
-             <strong>{a.breed}</strong> */}
+             
              <img className="img_tag" src={a.image_url} />
         
 

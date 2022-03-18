@@ -17,8 +17,9 @@ li {
 }
 
 .img_tag {
-  width: 300px;
-  text-align: center;
+  width: 500px;
+  margin-left: 15rem;
+  display: inline-block;
 }
 
 body {

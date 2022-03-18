@@ -6,6 +6,7 @@ import './animalshow.css'
 
 
 
+
 const BASE_ANIMALS_URL = "http://localhost:3000/animals/";
 
 
@@ -15,7 +16,8 @@ class AnimalsShow extends React.Component {
     state = {
         resultsAnimal: {},
         error: null,
-        loading: true
+        loading: true,
+        status: ''
 
     }
     componentDidMount() {
@@ -30,8 +32,9 @@ class AnimalsShow extends React.Component {
             console.log('RES.DATA response', res.data);
             this.setState({
                 resultsAnimal: res.data,
-                loading: false  // stop showing loading message
+                loading: false , // stop showing loading message
             });
+
         } catch (err) {
             console.log('Error in search AJAX: ', err);
             this.setState({ error: err, loading: false });
@@ -44,6 +47,20 @@ class AnimalsShow extends React.Component {
     handleSubmit = async (ev) => {
         ev.preventDefault();
         console.log('handleSubmit()', this.state.resultsAnimal.id)
+
+        try {
+            const res = await axios.post(`http://localhost:3000/adoption/${this.state.resultsAnimal.id}`);
+            this.setState({status: "pending"})
+            console.log(this.state.status);
+            //this.props.history.push(`status/`)
+            //  this.setState.apply({status: "approved"})
+
+            
+            //console.log('SHOW ANIMALS DATA', res.data );
+
+        } catch (err) {
+            console.log('Error in search AJAX:', err);
+        }
         
     }//add to cart  handleSubmit
 
@@ -77,7 +94,7 @@ class AnimalsShow extends React.Component {
             <div className='showAnimal'>
 
             <img src={image_url}></img>
-            <p>
+           
             {name}
             <br></br>
             {description}
@@ -86,11 +103,14 @@ class AnimalsShow extends React.Component {
             <br></br>
             {breed}
             <br></br>
+            <form onSubmit={this.handleSubmit}>
+                    <button type="submit" className='addButton'>Adoption</button>
+                </form>
             
+                {this.state.status}
             
 
-            </p>
-                
+            
                 
               
                 
