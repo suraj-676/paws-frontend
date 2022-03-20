@@ -7,6 +7,8 @@ import AnimalsShow from './components/AnimalShow'
 import Donations from './components/Donations'
 import Login from './components/Login'
 import axios from 'axios'
+import Signup from './components/Signup'
+
 // import MyProfile from './MyProfile'
 
 
@@ -67,14 +69,16 @@ class App extends React.Component {
 
       <div>
       <Route path='/'  component={Navbar} />
+
       {/* <Route path='/services' component={Services} /> */}
       {/* <Route path='/contact-us' component={ContactUs} />
-      <Route path='/sign-up' component={SignUp} />
       <Route path='/marketing' component={Marketing} />
       <Route path='/consulting' component={Consulting} /> */}
       <Route exact path='/animals' component={Animals} />
       <Route exact path='/donation' component={Donations} />
       <Route exact path='/animals/:id' component={AnimalsShow} />
+      <Route exact path='/signup' component={Signup} />
+
       {/* <Route exact path='/my_profile' component={MyProfile}/> */}
       <Route
         exact

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 
-const BASE_ORDER_URL = "http://localhost:3000"
+const BASE_DONATIONS_URL = "http://localhost:3000/donations"
 class Donation extends React.Component {
 
 
@@ -26,8 +26,12 @@ class Donation extends React.Component {
     
 
     handleInputAddress = (ev) => {
-        // console.log('input', ev.target.value);
+         console.log('input', ev.target.value);
         this.setState({ address: ev.target.value })
+    }
+    handleInputAmount = (ev) => {
+         console.log('input', ev.target.value);
+        this.setState({ amount: ev.target.value })
     }
 
     handleSubmit = async (ev) => {
@@ -45,33 +49,21 @@ class Donation extends React.Component {
 
     } //handleSubmit()
 
-    handleCreditCard = async (ev) => {
-        ev.preventDefault();
-        console.log('submit credit card', this.state);
-        try{
-            const orderRes = await axios.patch(`http://localhost:3000/donations/${this.state.donation.id}`)
-            
-        
-            // this.setState({order: orderRes.data});
-          }catch(err){
-            console.log('Error Creating Donation', err)
-          }
-
-    } //handleSubmit()
+   
 
     render() {
 
 
         return (
 
-            <div className='formField'>
+             <div className='formField'>
             
-            <Donation hideEditControls={true} /> 
-                <h4 className='orderName'>Order Details:</h4>
-                {
-                    this.state.adoption.id
-                    ?
-                    <form onSubmit={this.handleCreditCard}>
+             {/* <Donation hideEditControls={true} />  */}
+                 {/* <h4 className='doName'>Donation Details:</h4> */}
+                 {
+                    //  this.state.adoption.id
+                    // ?
+                    <form onSubmit={this.handleSubmit}>
                         <strong>Credit Card Details</strong>
                         <br/>
                         <input className='donationTextfield' type="text" placeholder="Credit Card Details" onChange={this.handleCreditCardDetails}/>
@@ -80,21 +72,30 @@ class Donation extends React.Component {
                         <br/>
                         <input className='donationTextfield' type="text" placeholder="Expiry Date" onChange={this.handleExpiryDate}/>
                         <br/>
+                        <strong>Enter Amount</strong>
+                        <br></br>
+                        <input className='donationTextfield' type="text" placeholder="Enter Amount" onChange={this.handleInputAmount}/>
+                        <br/>
 
-                        <button className='buttonFinal'>Donate For Paws</button>
+                        <strong>Enter Three Digit cvv</strong>
+                        <br></br>
+                        <input className='donationTextfield' type="text" placeholder="Enter Three Digit cvv" onChange={this.handle}/>
+                        <br/>
+
+                        <button className='buttonFinal'><strong>Donate For Paws</strong></button>
                 
                     </form>   
-                    :
                     
-                    <form onSubmit={this.handleSubmit}>
-                        <strong>Address</strong>
-                        <br/>
-                        <input className='donationTextfield' type="text" placeholder="address" onChange={this.handleInputAddress} />
-                        <br /><br />
-                        <button className='buttonFinal'>Finalise Payment</button>
-                        <br/>
+                    
+                    // <form onSubmit={this.handleSubmit}>
+                    //     <strong>Address</strong>
+                    //     <br/>
+                    //     <input className='donationTextfield' type="text" placeholder="address" onChange={this.handleInputAddress} />
+                    //     <br /><br />
+                    //     <button className='buttonFinal'>Finalise Payment</button>
+                    //     <br/>
 
-                    </form>
+                    // </form>
                 }
             
 

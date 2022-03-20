@@ -1,5 +1,6 @@
 
 import React from "react";
+import axios from 'axios'
 
 export default class SignUp extends React.Component {
 
@@ -7,7 +8,7 @@ export default class SignUp extends React.Component {
         
     }
 
-
+``
     // TODO: perform axios request and populate the state. 
     
     

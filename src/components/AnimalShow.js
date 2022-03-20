@@ -51,6 +51,8 @@ class AnimalsShow extends React.Component {
         try {
             const res = await axios.post(`http://localhost:3000/adoption/${this.state.resultsAnimal.id}`);
             this.setState({status: "pending"})
+            //this.setState({status: "approved"})
+
             console.log(this.state.status);
             //this.props.history.push(`status/`)
             //  this.setState.apply({status: "approved"})
@@ -103,11 +105,14 @@ class AnimalsShow extends React.Component {
             <br></br>
             {breed}
             <br></br>
+            <br></br>
             <form onSubmit={this.handleSubmit}>
                     <button type="submit" className='addButton'>Adoption</button>
                 </form>
             
                 {this.state.status}
+
+        
             
 
             

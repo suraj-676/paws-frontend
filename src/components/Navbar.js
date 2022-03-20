@@ -66,15 +66,18 @@ function Navbar() {
                Contact Us
             </Link>
           </li>
-          {/* <li className='nav-item'>
-            <Link
-              to='/Sign-In'
+          <li className='nav-item'>
+          <Link
+              to='/login'
               className='nav-links'
               onClick={closeMobileMenu}
             >
-             Sign In
+             Login
             </Link>
-          </li> */}
+          </li>
+          <li>
+           
+          </li>
           <li>
             <Link
               to='/sign-up'
