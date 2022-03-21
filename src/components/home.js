@@ -59,7 +59,8 @@ class Home extends React.Component {
                         <li>Welcome {this.state.currentUser.name} | </li>
                         <li><Link to='/animals'>Animal</Link></li>
                         <li><Link to='/donation'>Donation</Link></li>
-                        <li><Link to='/cart'>Cart</Link></li>
+                        <li><Link to='/services'>Cart</Link></li>
+                        
                         <li><Link onClick={this.handleLogout} to='/'>Logout</Link></li>
                       </ul>
                     )
@@ -77,8 +78,8 @@ class Home extends React.Component {
           <Route path='/services' component={Services} />
           <Route path='/contact-us' component={ContactUs} />
           <Route path='/sign-up' component={SignUp} />
-          <Route path='/marketing' component={Marketing} />
-          <Route path='/consulting' component={Consulting} />
+          
+          
           <Route path='/animals' component={Animals} />
           <Route path='/donations' component={Donations} />
           <Route

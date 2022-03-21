@@ -40,11 +40,11 @@ class App extends React.Component {
     console.log(token)
       axios.defaults.headers.common["Authorization"] = "Bearer " + token;
       this.setState({headerSet: true})
-      // axios.get(`${BASE_URL}/users/current`)
-      // .then((res) => {
-      //   this.setState({ currentUser: res.data });
-      // })
-      // .catch((err) => console.warn(err));
+      axios.get(`${BASE_URL}/users/current`)
+      .then((res) => {
+        this.setState({ currentUser: res.data });
+      })
+      .catch((err) => console.warn(err));
 
     }
     
@@ -77,8 +77,12 @@ class App extends React.Component {
       <Route exact path='/animals' component={Animals} />
       <Route exact path='/donation' component={Donations} />
       <Route exact path='/animals/:id' component={AnimalsShow} />
-      <Route exact path='/signup' component={Signup} />
 
+
+      <Route exact path='/signup'
+      render={(props) => (
+          <Signup setCurrentUser={this.setCurrentUser} {...props} />
+      )}/>
       {/* <Route exact path='/my_profile' component={MyProfile}/> */}
       <Route
         exact

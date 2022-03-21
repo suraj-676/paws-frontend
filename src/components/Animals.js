@@ -65,6 +65,8 @@ class Animals extends React.Component {
           animals.map(a =>
             <li className='animalIndex' key={a.id}>
               <Link to={`/animals/${a.id}`}>
+              <strong>Name</strong>
+              <br></br>
               <strong> {a.name} </strong>
              <br></br>
              
@@ -73,14 +75,7 @@ class Animals extends React.Component {
 
         </Link>
              
-
-             
               <br />
-             
-                
-              
-
-           
             </li>
           )
         }
@@ -98,4 +93,11 @@ class Animals extends React.Component {
 } // class Animals
 
 export default Animals;
+
+             
+             
+                
+              
+
+           
 

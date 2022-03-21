@@ -2,10 +2,24 @@
   margin: 10%;
   background-color: rgb(238, 222, 196, 0.7);
   padding: 5%;
+  color: green;
+  display: grid;
   border-radius: 10px;
+  font-style: italic;
 }
 
 img {
   max-width: 500px;
   text-align: center;
 }
+
+button:hover {
+  background-color: blueviolet;
+}
+
+/* body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-08gCKObPXNaIUod1zOHdQwREQ6Tv5er0xw&usqp=CAU");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+} */

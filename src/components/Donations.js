@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-//import { Link } from 'react-router-dom';
+import DonationShow from './DonationShow';
+import { Link } from 'react-router-dom';
 
 
 
@@ -85,6 +86,8 @@ class Donation extends React.Component {
                         <button className='buttonFinal'><strong>Donate For Paws</strong></button>
                 
                     </form>   
+
+                    
                     
                     
                     // <form onSubmit={this.handleSubmit}>

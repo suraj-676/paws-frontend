@@ -96,19 +96,34 @@ class AnimalsShow extends React.Component {
             <div className='showAnimal'>
 
             <img src={image_url}></img>
+           <br/>
+           <strong>Name</strong>
            
-            {name}
-            <br></br>
+           <strong> {name}</strong>
+            <br/>
+            <strong>Description</strong>
+           
             {description}
             <br></br>
+            <br></br>
+            <strong>Species</strong>
             {species}
-            <br></br>
+            
+           <br></br>
+           <br></br>
+
+
+            <strong>Breed</strong>
             {breed}
+            
+            
             <br></br>
             <br></br>
+           
             <form onSubmit={this.handleSubmit}>
                     <button type="submit" className='addButton'>Adoption</button>
                 </form>
+                <br></br>
             
                 {this.state.status}
 

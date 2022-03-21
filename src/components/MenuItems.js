@@ -1,17 +1,17 @@
 export const MenuItems = [
-    {
-      title: 'Our Mission',
-      path: 'ourmission',
-      cName: 'dropdown-link'
-    },
+    // {
+    //   title: 'Our Mission',
+    //   path: 'ourmission',
+    //   cName: 'dropdown-link'
+    // },
     {
       title: 'Adoption',
       path: '/adoption',
       cName: 'dropdown-link'
     },
     {
-      title: 'Pet Project',
-      path: '/petproject',
+      title: 'Animals',
+      path: '/animals',
       cName: 'dropdown-link'
     },
     {
@@ -20,8 +20,13 @@ export const MenuItems = [
       cName: 'dropdown-link'
     },
     {
-      title: 'Sign Out',
-      path: '/signout',
+      title: 'Logout',
+      path: '/Logout',
+      cName: 'dropdown-link'
+    },
+    {
+      title: 'Signup',
+      path: '/Signup',
       cName: 'dropdown-link'
     }
     
