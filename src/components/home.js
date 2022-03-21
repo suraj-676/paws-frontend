@@ -8,6 +8,7 @@ import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/SignUp';
 import Marketing from './components/pages/Marketing';
 import Consulting from './components/pages/Consulting';
+import Login from './components/Login'
 
 const BASE_URL = "http://localhost:3000";
 class Home extends React.Component {
