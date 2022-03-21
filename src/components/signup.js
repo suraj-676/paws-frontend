@@ -23,10 +23,15 @@ class Signup extends React.Component {
 
   handleSubmit = (ev) => {
     //create a request object we can pass through to knock
-    const request = {'email': this.state.email, 'password': this.state.password}
+    const request = {
+        email: this.state.email, 
+        password: this.state.password, 
+        first_name: this.state.first_name,
+        last_name: this.state.last_name
+    }
 
     //do an axios post request where we can send through the user details to rails and login
-    axios.post(`${BASE_URL}/new`, {auth: request})
+    axios.post(BASE_URL, request)
     .then(result => {
       localStorage.setItem("jwt", result.data.jwt)
       console.log("Signup", result.data)
@@ -49,7 +54,7 @@ class Signup extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label className='title'>Signup</label>
           <br/>
-
+          <label className='first_name'>First Name</label><br/>
           <input
             onChange={this.handleInput}
             name="first_name"
@@ -58,7 +63,8 @@ class Signup extends React.Component {
             placeholder='Enter name'
             />
           <br/>
-
+          <label >Last Name</label><br />
+          
           <input
             onChange={this.handleInput}
             name="last_name"
@@ -67,7 +73,7 @@ class Signup extends React.Component {
             placeholder='Enter name'
             />
           <br/>
-
+          <label >Email</label><br />
           <input
             onChange={this.handleInput}
             
@@ -77,6 +83,7 @@ class Signup extends React.Component {
             placeholder='Enter Email'
             />
           <br/>
+          <label >Password</label><br />
           <input
             onChange={this.handleInput}
             name="password"
