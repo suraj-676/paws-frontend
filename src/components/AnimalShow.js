@@ -11,7 +11,7 @@ const BASE_ANIMALS_URL = "http://localhost:3000/animals/";
 
 
 class AnimalsShow extends React.Component {
-
+// state to tell react that component and its children re rendered
 
     state = {
         resultsAnimal: {},
@@ -24,7 +24,7 @@ class AnimalsShow extends React.Component {
         this.revealAnimal();
 
     }
-
+//  used async to return the promise to return the object
     revealAnimal = async () => {
         this.setState({ loading: true });
         try {
@@ -47,7 +47,7 @@ class AnimalsShow extends React.Component {
     handleSubmit = async (ev) => {
         ev.preventDefault();
         console.log('handleSubmit()', this.state.resultsAnimal.id)
-
+// function will receive the form data if form validation is successful.
         try {
             const res = await axios.post(`http://localhost:3000/adoption/${this.state.resultsAnimal.id}`);
             this.setState({status: "pending"})
@@ -66,7 +66,7 @@ class AnimalsShow extends React.Component {
         
     }//add to cart  handleSubmit
 
-
+// to read props and state and return our jsx code javascript code
     render() {
         
         if (this.state.loading === true){

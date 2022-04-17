@@ -16,7 +16,7 @@ import '../App.css';
 
 
 const BASE_ANIMALS_URL = 'http://localhost:3000/animals';
-
+// state to tell react that component and its children re rendered
 class Animals extends React.Component {
     state = {
       description: '',
